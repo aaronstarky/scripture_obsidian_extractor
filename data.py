@@ -68,7 +68,7 @@ map_nt_url_to_file_name = {
     'rom' : 'Rom.',
     '1-cor' : '1 Cor.',
     '2-cor' : '2 Cor.',
-    'gal' : 'Gal',
+    'gal' : 'Gal.',
     'eph': 'Eph.',
     'philip' : 'Philip',
     'col' : 'Col.',
