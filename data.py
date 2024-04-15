@@ -60,32 +60,32 @@ map_ot_url_to_file_name = {
 }
 
 map_nt_url_to_file_name = {
-    # 'matt' : 'Matt',
-    # 'mark' : 'Mark',
-    # 'luke' : 'Luke',
-    # 'john' : 'John',
-    # 'acts' : 'Acts',
-    # 'rom' : 'Rom.',
-    # '1-cor' : '1 Cor.',
-    # '2-cor' : '2 Cor.',
-    'gal' : 'Gal.'
-    # 'eph': 'Eph.',
-    # 'philip' : 'Philip',
-    # 'col' : 'Col.',
-    # '1-thes' : '1 Thes.',
-    # '2-thes' : '2 Thes.',
-    # '1-tim' : ' 1 Tim.',
-    # '2-tim' : '2 Tim',
-    # 'titus' : 'Titus',
-    # 'philem' : 'Philem',
-    # 'heb' : 'Heb.',
-    # '1-pet' : '1 Pet.',
-    # '2-pet' : '2 Pet.',
-    # '1-jn' : '1 Jn.',
-    # '2-jn' : '2 Jn.',
-    # '3-jn' : '3 Jn.',
-    # 'jude' : 'Jude',
-    # 'rev' : 'Rev.'
+    'matt' : 'Matt',
+    'mark' : 'Mark',
+    'luke' : 'Luke',
+    'john' : 'John',
+    'acts' : 'Acts',
+    'rom' : 'Rom.',
+    '1-cor' : '1 Cor.',
+    '2-cor' : '2 Cor.',
+    'gal' : 'Gal.',
+    'eph': 'Eph.',
+    'philip' : 'Philip',
+    'col' : 'Col.',
+    '1-thes' : '1 Thes.',
+    '2-thes' : '2 Thes.',
+    '1-tim' : ' 1 Tim.',
+    '2-tim' : '2 Tim',
+    'titus' : 'Titus',
+    'philem' : 'Philem',
+    'heb' : 'Heb.',
+    '1-pet' : '1 Pet.',
+    '2-pet' : '2 Pet.',
+    '1-jn' : '1 Jn.',
+    '2-jn' : '2 Jn.',
+    '3-jn' : '3 Jn.',
+    'jude' : 'Jude',
+    'rev' : 'Rev.'
 }
 
 # map_book_to_chapter_number = {
@@ -162,7 +162,7 @@ map_nt_book_to_chapter_number = {
     # 'rom' : 16,
     # '1-cor' : 16,
     # '2-cor' : 13,
-    'gal' : 6
+    # 'gal' : 6,
     # 'eph': 6,
     # 'philip' : 4,
     # 'col' : 4,
@@ -173,13 +173,13 @@ map_nt_book_to_chapter_number = {
     # 'titus' :3,
     # 'philem' : 1,
     # 'heb' : 13,
-    # '1-pet' : 5,
-    # '2-pet' : 3,
-    # '1-jn' : 5,
-    # '2-jn' : 1,
-    # '3-jn' : 1,
-    # 'jude' : 1,
-    # 'rev' : 22
+    '1-pet' : 5,
+    '2-pet' : 3,
+    '1-jn' : 5,
+    '2-jn' : 1,
+    '3-jn' : 1,
+    'jude' : 1,
+    'rev' : 22
 }
 
 map_dc_book_to_chapter_number = {
