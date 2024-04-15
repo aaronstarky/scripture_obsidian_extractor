@@ -59,48 +59,57 @@ map_ot_url_to_file_name = {
   'mal':'Mal.',
 }
 
-
-
-map_short_ref_to_file_name = {
-  '1 Ne.' : '1 Nephi',
-  '2 Ne.' : '2 Nephi',
-  'Jacob' : 'Jacob',
-  'Enos' : 'Enos',
-  'Jarom' : 'Jarom',
-  'Omni' : 'Omni',
-  'W of M' : 'Words of Mormon',
-  'Mosiah' : 'Mosiah',
-  'Alma' : 'Alma',
-  'Hel.' : 'Helaman',
-  '3 Ne.' : '3 Nephi',
-  '4 Ne.' : '4 Nephi',
-  'Morm.' : 'Mormon',
-  'Ether' : 'Ether',
-  'Moro.' : 'Moroni'
+map_nt_url_to_file_name = {
+    # 'matt' : 'Matt',
+    # 'mark' : 'Mark',
+    # 'luke' : 'Luke',
+    # 'john' : 'John',
+    # 'acts' : 'Acts',
+    # 'rom' : 'Rom.',
+    # '1-cor' : '1 Cor.',
+    # '2-cor' : '2 Cor.',
+    'gal' : 'Gal.'
+    # 'eph': 'Eph.',
+    # 'philip' : 'Philip',
+    # 'col' : 'Col.',
+    # '1-thes' : '1 Thes.',
+    # '2-thes' : '2 Thes.',
+    # '1-tim' : ' 1 Tim.',
+    # '2-tim' : '2 Tim',
+    # 'titus' : 'Titus',
+    # 'philem' : 'Philem',
+    # 'heb' : 'Heb.',
+    # '1-pet' : '1 Pet.',
+    # '2-pet' : '2 Pet.',
+    # '1-jn' : '1 Jn.',
+    # '2-jn' : '2 Jn.',
+    # '3-jn' : '3 Jn.',
+    # 'jude' : 'Jude',
+    # 'rev' : 'Rev.'
 }
-
-map_book_to_chapter_number = {
-  '1-ne' : 1
-}
-
 
 # map_book_to_chapter_number = {
-#   '1-ne' : 22,
-#   '2-ne' : 33,
-#   'jacob' : 7,
-#   'enos' : 1,
-#   'jarom' : 1,
-#   'omni' : 1,
-#   'w-of-m' : 1,
-#   'mosiah' : 29,
-#   'alma' : 63,
-#   'hel' : 16,
-#   '3-ne' : 30,
-#   '4-ne' : 1,
-#   'morm' : 9,
-#   'ether' : 15,
-#   'moro' : 10
+#   '1-ne' : 1
 # }
+
+
+map_book_to_chapter_number = {
+  '1-ne' : 22,
+  '2-ne' : 33,
+  'jacob' : 7,
+  'enos' : 1,
+  'jarom' : 1,
+  'omni' : 1,
+  'w-of-m' : 1,
+  'mosiah' : 29,
+  'alma' : 63,
+  'hel' : 16,
+  '3-ne' : 30,
+  '4-ne' : 1,
+  'morm' : 9,
+  'ether' : 15,
+  'moro' : 10
+}
 
 map_ot_book_to_chapter_number = {
   'gen':50,
@@ -145,30 +154,38 @@ map_ot_book_to_chapter_number = {
 }
 
 map_nt_book_to_chapter_number = {
-    'matt' : 28,
-    'mark' : 16,
-    'luke' :24,
-    'john' : 21,
-    'acts' : 28,
-    'rom' : 16,
-    '1-cor' : 16,
-    '2-cor' : 13,
-    'gal' : 6,
-    'eph': 6,
-    'philip' : 4,
-    'col' : 4,
-    '1-thes' : 5,
-    '2-thes' : 3,
-    '1-tim' : 6,
-    '2-tim' : 4,
-    'titus' :3,
-    'philem' : 1,
-    'hebrews' : 13,
-    '1-pet' : 5,
-    '2-pet' : 3,
-    '1-jn' : 5,
-    '2-jn' : 1,
-    '3-jn' : 1,
-    'jude' : 1,
-    'rev' : 22
+    # 'matt' : 28,
+    # 'mark' : 16,
+    # 'luke' :24,
+    # 'john' : 21,
+    # 'acts' : 28,
+    # 'rom' : 16,
+    # '1-cor' : 16,
+    # '2-cor' : 13,
+    'gal' : 6
+    # 'eph': 6,
+    # 'philip' : 4,
+    # 'col' : 4,
+    # '1-thes' : 5,
+    # '2-thes' : 3,
+    # '1-tim' : 6,
+    # '2-tim' : 4,
+    # 'titus' :3,
+    # 'philem' : 1,
+    # 'heb' : 13,
+    # '1-pet' : 5,
+    # '2-pet' : 3,
+    # '1-jn' : 5,
+    # '2-jn' : 1,
+    # '3-jn' : 1,
+    # 'jude' : 1,
+    # 'rev' : 22
+}
+
+map_dc_book_to_chapter_number = {
+    'dc' : 138
+}
+
+map_dc_url_to_file_name = {
+    'dc' : 'D&C'
 }

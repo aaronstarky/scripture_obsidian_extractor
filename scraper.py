@@ -4,7 +4,9 @@ from bs4 import BeautifulSoup
 import time
 from data import *
 from trash_can import *
+import threading
 
+print("Hello")
 
 """
 These are the good functions that I am very happy with
@@ -13,7 +15,7 @@ def remove_parentheses(text):
   return re.sub(r"\(([^)]+)\)", '', text).strip()
 
 def get_book_names(text):
-  results = re.findall(r"\d*\s*[a-z,A-Z]+\.*", text)
+  results = re.findall(r"\d*\s*[a-z,A-Z,D&C]+\.*", text)
   for i in range(len(results)):
     results[i] = results[i].strip()
     results[i] = re.sub(r'\s', ' ', results[i])
@@ -27,7 +29,7 @@ def get_CR_references(text):
   text = remove_parentheses(text)
   books = get_book_names(text)
 
-  text_divided = re.split(r"\d*\s*[a-z,A-Z]+\.*", text)[1:]
+  text_divided = re.split(r"\d*\s*[a-z,A-Z,D&C]+\.*", text)[1:]
 
   CRs = []
 
@@ -104,10 +106,12 @@ def get_references(li):
 def get_reference_string(li):
   markdown_links = get_references(li)
   ref_string = '('
-  for i in range(len(ref_string)):
-    if i >= len(markdown_links):
-      break
+  for i in range(len(markdown_links)):
     ref_string += markdown_links[i]
+  # for i in range(len(ref_string)):
+  #   if i > len(markdown_links):
+  #     break
+  #   ref_string += markdown_links[i]
   ref_string += ')'
   return ref_string
 
@@ -131,6 +135,16 @@ def generate_ot_urls():
       urls.append((url, map_ot_url_to_file_name[book], i))
   return urls
 
+def generate_urls(volume, mapping_chapter_num, mapping_file_name):
+  print('in generate_urls...')
+  urls = []
+
+  for book in mapping_chapter_num:
+    for i in range(1, mapping_chapter_num[book]+1):
+      url = f'https://www.churchofjesuschrist.org/study/scriptures/{volume}/{book}/{i}'
+      urls.append((url, mapping_file_name[book], i))
+      print(url)
+  return urls
 
 
 """
@@ -218,7 +232,7 @@ def create_notes_for_chapter_V2(url, path):
     verse_number = new_paragraph.find("span", class_='verse-number').get_text()
     verse_number = verse_number.strip()
     with open(f"{path}/{book_name} {chapter}_{verse_number}.md", "w") as verse_file:
-      verse_file.write(new_paragraph.get_text())
+      verse_file.write(new_paragraph.get_text().replace('\u2161', ''))
   print(f'{book_name} {chapter}')
 
 def run(urls, path):
@@ -229,8 +243,33 @@ def run(urls, path):
   end_time = time.time()
   #$#print(f'Total time = {str(end_time - start_time)}')
 
+def run_V2(urls, path):
+    num_threads = 10
+    chunk_size = len(urls) // num_threads
 
-bofm_urls = generate_bofm_urls()
-run(bofm_urls, 'bofm_notes')
+    threads = []
+    start_time = time.time()
+
+    for i in range(num_threads):
+        start_idx = i * chunk_size
+        end_idx = (i + 1) * chunk_size if i < num_threads - 1 else len(urls)
+        thread = threading.Thread(target=process_url_range, args=(urls, path, start_idx, end_idx))
+        threads.append(thread)
+        thread.start()
+
+    for thread in threads:
+        thread.join()
+
+    end_time = time.time()
+    print(f'Total time = {end_time - start_time:.2f} seconds')
+
+# bofm_urls = generate_bofm_urls()
+# run(bofm_urls, 'bofm_notes')
 # ot_urls = generate_ot_urls()
+# ot_urls =generate_urls('ot', map_ot_book_to_chapter_number, map_ot_url_to_file_name)
+print('hello')
+nt_urls = generate_urls('nt', map_nt_book_to_chapter_number, map_nt_url_to_file_name)
+run(nt_urls, 'nt_notes')
+# dc_urls = generate_urls('dc-testament', map_dc_book_to_chapter_number, map_dc_url_to_file_name)
+# run(dc_urls, 'dc_notes')
 # run(ot_urls, 'ot_notes')
